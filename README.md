@@ -5,7 +5,7 @@ An easy way to create routes in KoaJS
 ## Installation
 
 ```
-npm install koaless
+npm install @gideaoms/koaless
 ```
 
 ## Examples
