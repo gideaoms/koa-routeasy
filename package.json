@@ -1,0 +1,17 @@
+{
+  "name": "koaless",
+  "version": "1.0.0",
+  "description": "Router to KoaJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Gideão Silva <gideaoms@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "include-all": "^4.0.3",
+    "koa-compose": "^4.1.0",
+    "koa-router": "^7.4.0"
+  }
+}
