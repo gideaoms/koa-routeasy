@@ -22,7 +22,7 @@ const def = {
   routes: getDirectory("routes"),
   controllers: getDirectory("controllers"),
   middlewares: getDirectory("middlewares"),
-  suffix: "route"
+  suffix: "\\.route"
 };
 
 module.exports = (options = {}) => {
@@ -31,8 +31,7 @@ module.exports = (options = {}) => {
   /**
    * Load routes
    */
-  const regex =
-    "(.+)" + (options.suffix ? "\\." + options.suffix : "") + "\\.js$";
+  const regex = `(.+)${options.suffix ? options.suffix : ""}\\.js$`;
 
   const routes = includeAll({
     dirname: options.routes,

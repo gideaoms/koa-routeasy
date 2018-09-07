@@ -38,6 +38,6 @@ app.use(koaless({
   routes: "routes_path", // (default => "app/routes")
   controllers: "controllers_path", // (default => "app/controllers")
   middlewares: "middlewares_path", // (default => "app/middlewares")
-  suffix: false // (default => "route") = "city.route.js"
+  suffix: false // (default => ".route") = "city.route.js"
 }));
 ```
