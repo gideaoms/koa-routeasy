@@ -1,12 +1,18 @@
 {
   "name": "@gideaoms/koaless",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Router to KoaJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "Koa",
+    "KoaJS",
+    "Router",
+    "Koaless",
+    "Routes"
+  ],
   "author": "Gideão Silva <gideaoms@gmail.com>",
   "license": "ISC",
   "dependencies": {
