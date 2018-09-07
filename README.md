@@ -10,6 +10,8 @@ npm install @gideaoms/koaless
 
 ## Examples
 
+### routes
+
 ```
 module.exports = {
   "get /cities": {
@@ -18,4 +20,24 @@ module.exports = {
     middleware: "guest.middleware"
   }
 };
+```
+
+### app.js
+
+```
+const Koa = require('koa);
+const koaless = require('koaless');
+
+const app = new Koa();
+
+app.use(koaless());
+
+// OR
+
+app.use(koaless({
+  routes: "routes_path",
+  controllers: "controllers_path",
+  middlewares: "middlewares_path",
+  suffix: false (default => "route") = "city.route.js"
+}));
 ```
