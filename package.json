@@ -1,6 +1,6 @@
 {
-  "name": "koaless",
-  "version": "0.9.0",
+  "name": "@gideaoms/koaless",
+  "version": "0.10.0",
   "description": "The easiest way to route with KoaJS",
   "main": "index.js",
   "scripts": {

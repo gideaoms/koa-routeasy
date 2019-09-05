@@ -23,7 +23,7 @@ const userController = require('./user-controller');
 const server = new Koa();
 const port = 3001;
 
-const router = new koaless.Router();
+const router = new koaless.Router({ prefix: '/api' });
 
 router.post({
   path: '/users',
@@ -54,8 +54,8 @@ server.listen(port, err => {
 
 ## Used libraries
 
-- Router: [koa-router](https://github.com/ZijianHe/koa-router)
-- Validation: [fastest-validator](https://github.com/icebob/fastest-validator)
+- [koa-router](https://github.com/ZijianHe/koa-router): `koaless` is an abstraction from the `koa-router` library, so you can use all lib `koa-router` methods
+- [fastest-validator](https://github.com/icebob/fastest-validator): `koaless` uses the `fastest-validator` library to validate input data
 
 ## Author
 
