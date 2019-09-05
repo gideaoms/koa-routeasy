@@ -1,6 +1,6 @@
 # Koaless
 
-An easy way to create routes in KoaJS
+The easiest way to route with KoaJS
 
 ## Installation
 
@@ -8,36 +8,44 @@ An easy way to create routes in KoaJS
 npm install @gideaoms/koaless
 ```
 
-## Examples
-
-### routes
+## Practical Example
 
 ```
-module.exports = {
-  "get /cities": {
-    controller: "city.controller",
-    action: "index",
-    middleware: "guest.middleware"
-  }
-};
+const Koa = require('koa');
+const bodyparser = require('koa-bodyparser');
+const koaless = require('@gideaoms/koaless');
+
+const middleware1 = require('./middleware-1');
+const middleware2 = require('./middleware-2');
+
+const userController = require('./user-controller');
+
+const server = new Koa();
+const port = 3001;
+
+const router = new koaless.Router();
+
+router
+  .post({
+    path: '/users',
+    validate: {
+      body: {
+        name: {
+          type: 'string',
+          empty: false,
+        },
+      },
+    },
+    middlewares: [middleware1, middleware2],
+    handler: userController.create,
+  });
 ```
 
-### app.js
+## Used libraries
 
-```
-const Koa = require('koa);
-const koaless = require('koaless');
+- Router: [koa-router](https://github.com/ZijianHe/koa-router)
+- Validation: [fastest-validator](https://github.com/icebob/fastest-validator)
 
-const app = new Koa();
+## Author
 
-app.use(koaless());
-
-// OR
-
-app.use(koaless({
-  routes: "routes_path", // (default => "app/routes")
-  controllers: "controllers_path", // (default => "app/controllers")
-  middlewares: "middlewares_path", // (default => "app/middlewares")
-  suffix: false // (default => ".route") = "city.route.js"
-}));
-```
+Gideão Silva - [@gideaoms](https://twitter.com/gideao_ms)
