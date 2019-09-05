@@ -1,10 +1,10 @@
 'use strict';
 
-const KoaRouter = require('koa-router');
+const KRouter = require('koa-router');
 const compose = require('koa-compose');
 const Validator = require('./Validator');
 
-class Router extends KoaRouter {
+class Router extends KRouter {
   get({ path, validate, middlewares, handler }) {
     middlewares = this._configMiddlewares({ middlewares, validate });
     super.get(path, middlewares, handler);
