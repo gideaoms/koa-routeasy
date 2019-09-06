@@ -13,7 +13,7 @@ npm install koa-routeasy
 ```js
 const Koa = require('koa');
 const bodyparser = require('koa-bodyparser');
-const koa-routeasy = require('koa-routeasy');
+const routeasy = require('koa-routeasy');
 
 const middleware1 = require('./middleware-1');
 const middleware2 = require('./middleware-2');
@@ -23,7 +23,7 @@ const userController = require('./user-controller');
 const server = new Koa();
 const port = 3001;
 
-const router = new koa-routeasy.Router({ prefix: '/api' });
+const router = new routeasy.Router({ prefix: '/api' });
 
 router.post({
   path: '/users',
