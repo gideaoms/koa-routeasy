@@ -1,19 +1,19 @@
-# Koaless
+# koa-routeasy
 
 The easiest way to route with KoaJS
 
 ## Installation
 
 ```js
-npm install @gideaoms/koaless
+npm install koa-routeasy
 ```
 
-## Practical Example
+## Example
 
 ```js
 const Koa = require('koa');
 const bodyparser = require('koa-bodyparser');
-const koaless = require('@gideaoms/koaless');
+const koa-routeasy = require('koa-routeasy');
 
 const middleware1 = require('./middleware-1');
 const middleware2 = require('./middleware-2');
@@ -23,7 +23,7 @@ const userController = require('./user-controller');
 const server = new Koa();
 const port = 3001;
 
-const router = new koaless.Router({ prefix: '/api' });
+const router = new koa-routeasy.Router({ prefix: '/api' });
 
 router.post({
   path: '/users',
@@ -54,8 +54,8 @@ server.listen(port, err => {
 
 ## Used libraries
 
-- [koa-router](https://github.com/ZijianHe/koa-router): `koaless` is an abstraction from the `koa-router` library, so you can use all lib `koa-router` methods
-- [fastest-validator](https://github.com/icebob/fastest-validator): `koaless` uses the `fastest-validator` library to validate input data
+- [koa-router](https://github.com/ZijianHe/koa-router): `koa-routeasy` is an abstraction from the `koa-router` library, so you can use all lib `koa-router` methods
+- [fastest-validator](https://github.com/icebob/fastest-validator): `koa-routeasy` uses the `fastest-validator` library to validate input data
 
 ## Author
 

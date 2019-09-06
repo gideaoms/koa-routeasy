@@ -1,6 +1,6 @@
 {
-  "name": "@gideaoms/koaless",
-  "version": "0.10.0",
+  "name": "koa-routeasy",
+  "version": "0.12.0",
   "description": "The easiest way to route with KoaJS",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,7 @@
   "keywords": [
     "Koa",
     "KoaJS",
-    "Router",
-    "Koaless",
-    "Routes"
+    "Router"
   ],
   "author": "Gideão Silva <gideaoms@gmail.com>",
   "license": "ISC",
