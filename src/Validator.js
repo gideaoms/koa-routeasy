@@ -13,8 +13,11 @@ class Validator {
     const validationMiddleware = async (ctx, next) => {
       try {
         this._getAllValidations(ctx, validations).forEach(
-          ({ data, schema }) => {
-            const ValidationResult = this._validator.validate(data, schema);
+          ({ dataSource, validationRules }) => {
+            const ValidationResult = this._validator.validate(
+              dataSource,
+              validationRules
+            );
 
             const isThereErrors = ValidationResult.length;
             if (isThereErrors) {
@@ -34,10 +37,10 @@ class Validator {
   }
 
   _getAllValidations(ctx, validations) {
-    return Object.keys(validations).map(source => {
+    return Object.keys(validations).map(validationFrom => {
       return {
-        schema: validations[source] || {},
-        data: ctx[source] || ctx.request[source] || {},
+        validationRules: validations[validationFrom] || {},
+        dataSource: ctx[validationFrom] || ctx.request[validationFrom] || {},
       };
     });
   }
