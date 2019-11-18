@@ -25,12 +25,12 @@ class Validator {
             }
           }
         );
-
-        await next();
       } catch (validationErrors) {
         ctx.status = HTTP_STATUS_BAD_REQUEST;
         ctx.body = validationErrors;
+        return;
       }
+      await next();
     };
 
     return validationMiddleware;
